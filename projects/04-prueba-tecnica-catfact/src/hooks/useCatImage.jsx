@@ -3,6 +3,11 @@ import { getRandomImage } from '../services/image'
 
 export function useCatImage ({ fact }) {
   const [image, setImage] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  const updateImage = () => {
+    setLoading(true)
+  }
 
   useEffect(() => {
     if (!fact) return
@@ -22,8 +27,16 @@ export function useCatImage ({ fact }) {
     }
 
     const parameters = `/says/${firstWords}?${urlOptions}`
-    getRandomImage({ parameters }).then(urlImage => setImage(urlImage))
+    getRandomImage({ parameters })
+      .then(urlImage => {
+        setImage(urlImage)
+        setLoading(false)
+      })
+      .catch(() => {
+        setLoading(false)
+        console.error('Error fetching cat image')
+      })
   }, [fact])
 
-  return { image }
+  return { image, loading, updateImage }
 }

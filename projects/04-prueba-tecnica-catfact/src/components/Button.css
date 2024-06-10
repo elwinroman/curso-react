@@ -1,0 +1,20 @@
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #2E489B;
+  cursor: pointer;
+  transition: border-color 200ms;
+}
+
+button:hover {
+  background-color: #2b407d;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}

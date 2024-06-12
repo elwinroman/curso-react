@@ -1,4 +1,4 @@
-export const SELECT_OPTIONS = [
+export const SELECT_FILTER_OPTIONS = [
   {
     id: crypto.randomUUID(),
     label: 'Tipo',
@@ -47,6 +47,57 @@ export const SELECT_OPTIONS = [
       }
     ]
   },
+]
+
+export const FILTER_OPTIONS = [
+  {
+    id: crypto.randomUUID(),
+    text: 'Blur',
+    type: 'text',
+    placeholder: '30',
+    regex: /^[0-9]*$/,
+    input_class: 'filter-box-base type-input-text',
+    label_class: 'filter-label-base',
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'Brightness',
+    type: 'text',
+    placeholder: '30',
+    regex: /^[0-9]*$/,
+    input_class: 'filter-box-base type-input-text',
+    label_class: 'filter-label-base',
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'Saturation',
+    type: 'text',
+    placeholder: '30',
+    regex: /^[0-9]*$/,
+    input_class: 'filter-box-base type-input-text',
+    label_class: 'filter-label-base',
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'Hue',
+    type: 'text',
+    placeholder: '30',
+    regex: /^[0-9]*$/,
+    input_class: 'filter-box-base type-input-text',
+    label_class: 'filter-label-base',
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'Lightness',
+    type: 'text',
+    placeholder: '30',
+    regex: /^[0-9]*$/,
+    input_class: 'filter-box-base type-input-text',
+    label_class: 'filter-label-base',
+  },
+]
+
+export const FONT_OPTIONS = [
   {
     id: crypto.randomUUID(),
     label: 'Font family',

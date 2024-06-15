@@ -1,4 +1,4 @@
-const CAT_FACT_URL = 'https://catfact.ninja/fact'
+// const CAT_FACT_URL = 'https://catfact.ninja/fact'
 
 export async function getRandomFact () {
   return Promise.resolve('Hola mundo, hola gato')

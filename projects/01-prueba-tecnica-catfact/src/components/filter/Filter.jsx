@@ -1,23 +1,35 @@
 import './Filter.css'
 import { Select } from './Select'
+import { Input, InputColor } from './Input'
 import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS } from '../../constants/filter-options'
 
-export function Filter() {
+export function Filter () {
+  const { filter, tipo } = SELECT_FILTER_OPTIONS
+
   return (
     <div className="filter-container">
-      {
-        SELECT_FILTER_OPTIONS.map(element => (
-          <Select key={element.id} label={element.label} options={element.options} />
-        ))
-      }
-      {
-        FILTER_OPTIONS.map(element => (
-          <div className="filter-box-container">
-            <label htmlFor={element.id} className={element.class}>{element.text}</label>
-            <input type={element.type} className="filter-box-base type-input-text" placeholder={element.placeholder} />
-          </div>
-        ))
-      }
+      <form action="">
+        <Select label={tipo.label} options={tipo.options} />
+        <Select label={filter.label} options={filter.options} />
+        <InputColor />
+
+        {
+          FILTER_OPTIONS.map(element => (
+            <Input
+              key={`prop-${element.id}`}
+              id={element.id}
+              text={element.text}
+              type={element.type}
+              placeholder={element.placeholder}
+              regex={element.regex}
+              inputClass={element.inputClass}
+              labelClass={element.labelClass}
+            />
+          ))
+        }
+
+        <InputColor />
+      </form>
 
     </div>
   )

@@ -1,67 +1,12 @@
 .filter-container {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   background-color: #0f171f;
   border-radius: 4px;
   padding: 2rem;
 }
 
-.filter-box-base {
-  border-radius: 8px;
-  border: 1px solid rgb(67, 77, 91);
-  width: 200px;
-  font-size: 0.94rem;
-  background-color: rgb(28, 32, 37);
-  color: rgb(199, 208, 221);
-  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
-}
-
-.filter-box-container {
+.filter-container form {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-
-.filter-label-base {
-  font-size: 0.94rem;
-  font-weight: 500;
-  color: #b6bec9;
-}
-
-/* Input text type */
-.filter-box-base.type-input-text {
-  box-sizing: border-box;
-  padding: 0.6rem 0.5rem;
-}
-
-.filter-box-base.type-input-text:hover {
-  border-color: rgb(51, 153, 255);
-}
-
-.filter-box-base.type-input-text:focus,
-.filter-box-base.type-input-text:focus-visible,
-.filter-box-base.type-input-text:active {
-  outline: rgb(51, 153, 255) solid 2px;
-  border-color: rgb(51, 153, 255);
-}
-
-/* Select type */
-.filter-box-base.type-select {
-  padding: 0.6rem 0.5rem;
-  outline: none;
-}
-
-.filter-box-base.type-select:hover {
-  background-color: rgb(48, 55, 64);
-  border-color: rgb(107, 122, 144)
-}
-
-/* Input color type */
-/* .filter-box-base.type-input-color {
-  padding: 0;
-  margin: 0;
-  border: 0;
-} */

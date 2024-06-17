@@ -5,12 +5,9 @@ export function useCatImage ({ fact }) {
   const [image, setImage] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const updateImage = () => {
-    setLoading(true)
-  }
-
   useEffect(() => {
     if (!fact) return
+    if (!loading) setLoading(true)
 
     const firstWords = fact.split(' ', 3).join(' ')
     const options = {
@@ -38,5 +35,5 @@ export function useCatImage ({ fact }) {
       })
   }, [fact])
 
-  return { image, loading, updateImage }
+  return { image, loading }
 }

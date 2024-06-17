@@ -1,7 +1,7 @@
 // const CAT_FACT_URL = 'https://catfact.ninja/fact'
 
 export async function getRandomFact () {
-  return Promise.resolve('Hola mundo, hola gato')
+  return Promise.resolve('Hola mundo, hola gato ' + crypto.randomUUID())
 
   /* const response = await fetch(CAT_FACT_URL)
   const data = await response.json()

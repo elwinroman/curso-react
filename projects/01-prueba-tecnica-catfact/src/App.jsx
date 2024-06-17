@@ -7,14 +7,9 @@ import { Button } from './components/Button'
 
 export default function App () {
   const { fact, updateFact } = useCatFact()
-  const { image, loading, updateImage } = useCatImage({ fact })
+  const { image, loading } = useCatImage({ fact })
 
   const WIDTH_IMAGE = 500
-
-  const handleClick = () => {
-    updateFact()
-    updateImage()
-  }
 
   return (
     <div className='container'>

@@ -26,7 +26,7 @@ export function Input ({ id, type, placeholder, regex, text, inputClass, labelCl
   )
 }
 
-export function InputColor () {
+export function InputColor ({ label, disabled }) {
   const [color, setColor] = useState('#ff0000')
 
   const handleChange = (event) => {
@@ -35,12 +35,13 @@ export function InputColor () {
 
   return (
     <div className="input-box-container">
-      <label className="input-label-base">Custom filter</label>
-      <div className="input-base type-color">
+      <label className={`input-label-base ${disabled ? 'disabled' : ''}`}>{ label }</label>
+      <div className={`input-base type-color ${disabled ? 'disabled' : ''}`} >
         <input
           onChange={handleChange}
           type="color"
           value={color}
+          disabled={disabled}
         />
         <span>{color}</span>
       </div>

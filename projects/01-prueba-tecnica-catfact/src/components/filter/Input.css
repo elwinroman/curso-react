@@ -1,7 +1,7 @@
 .input-base {
   border-radius: 8px;
   border: 1px solid rgb(67, 77, 91);
-  width: 180px;
+  width: 100%;
   font-size: 0.94rem;
   background-color: rgb(28, 32, 37);
   color: rgb(199, 208, 221);
@@ -19,6 +19,10 @@
   font-size: 0.94rem;
   font-weight: 500;
   color: #b6bec9;
+
+  &.disabled {
+    color: #898b8f;
+  }
 }
 
 /* Input text type */
@@ -52,6 +56,11 @@
 .input-base.type-color {
   position: relative;
   padding: 1.131rem 0.5rem;
+
+  &.disabled {
+    background-color: #434d5b;
+    color: #898b8f;
+  }
 }
 
 .input-base.type-color > input {
@@ -67,6 +76,10 @@
   transform: translateY(-50%);
   border-radius: 10px;
   cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+  }
 }
 
 .input-base.type-color > input::-webkit-color-swatch {

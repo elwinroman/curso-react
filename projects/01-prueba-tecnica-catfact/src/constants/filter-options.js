@@ -1,6 +1,5 @@
-export const SELECT_FILTER_OPTIONS = [
-  {
-    id: crypto.randomUUID(),
+export const SELECT_FILTER_OPTIONS = {
+  tipo: {
     label: 'Tipo',
     options: [
       {
@@ -25,8 +24,7 @@ export const SELECT_FILTER_OPTIONS = [
       }
     ]
   },
-  {
-    id: crypto.randomUUID(),
+  filter: {
     label: 'Filter',
     options: [
       {
@@ -46,8 +44,8 @@ export const SELECT_FILTER_OPTIONS = [
         value: 'custom'
       }
     ]
-  },
-]
+  }
+}
 
 export const FILTER_OPTIONS = [
   {
@@ -56,8 +54,8 @@ export const FILTER_OPTIONS = [
     type: 'text',
     placeholder: '30',
     regex: /^[0-9]*$/,
-    input_class: 'filter-box-base type-input-text',
-    label_class: 'filter-label-base',
+    inputClass: 'input-base type-text',
+    labelClass: 'input-label-base'
   },
   {
     id: crypto.randomUUID(),
@@ -65,8 +63,8 @@ export const FILTER_OPTIONS = [
     type: 'text',
     placeholder: '30',
     regex: /^[0-9]*$/,
-    input_class: 'filter-box-base type-input-text',
-    label_class: 'filter-label-base',
+    inputClass: 'input-base type-text',
+    labelClass: 'input-label-base'
   },
   {
     id: crypto.randomUUID(),
@@ -74,8 +72,8 @@ export const FILTER_OPTIONS = [
     type: 'text',
     placeholder: '30',
     regex: /^[0-9]*$/,
-    input_class: 'filter-box-base type-input-text',
-    label_class: 'filter-label-base',
+    inputClass: 'input-base type-text',
+    labelClass: 'filter-label-base'
   },
   {
     id: crypto.randomUUID(),
@@ -83,8 +81,8 @@ export const FILTER_OPTIONS = [
     type: 'text',
     placeholder: '30',
     regex: /^[0-9]*$/,
-    input_class: 'filter-box-base type-input-text',
-    label_class: 'filter-label-base',
+    inputClass: 'input-base type-text',
+    labelClass: 'input-label-base'
   },
   {
     id: crypto.randomUUID(),
@@ -92,9 +90,9 @@ export const FILTER_OPTIONS = [
     type: 'text',
     placeholder: '30',
     regex: /^[0-9]*$/,
-    input_class: 'filter-box-base type-input-text',
-    label_class: 'filter-label-base',
-  },
+    inputClass: 'input-base type-text',
+    labelClass: 'input-label-base'
+  }
 ]
 
 export const FONT_OPTIONS = [

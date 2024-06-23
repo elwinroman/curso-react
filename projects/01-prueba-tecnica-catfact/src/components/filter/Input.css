@@ -28,31 +28,31 @@
 /* Input text type */
 .input-base.type-text {
   padding: 0.6rem 0.5rem;
-}
 
-.input-base.type-text:hover {
-  border-color: rgb(51, 153, 255);
-}
+  &:hover {
+    border-color: #3399ff;
+  }
 
-.input-base.type-text:focus,
-.input-base.type-text:focus-visible,
-.input-base.type-text:active {
-  outline: rgb(51, 153, 255) solid 2px;
-  border-color: rgb(51, 153, 255);
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: #3399ff solid 2px;
+    border-color: #3399ff;
+  }
 }
 
 /* Select type */
 .input-base.type-select {
   padding: 0.538rem 0.5rem;
   outline: none;
+
+  &:hover {
+    background-color: #303740;
+    border-color: #6b7a90
+  }
 }
 
-.input-base.type-select:hover {
-  background-color: rgb(48, 55, 64);
-  border-color: rgb(107, 122, 144)
-}
-
-/* Input color type */
+/* Input color type (DIV) */
 .input-base.type-color {
   position: relative;
   padding: 1.131rem 0.5rem;
@@ -60,6 +60,11 @@
   &.disabled {
     background-color: #434d5b;
     color: #898b8f;
+  }
+
+  &:hover:not(.disabled) {
+    background-color: #303740;
+    border-color: #6b7a90;
   }
 }
 

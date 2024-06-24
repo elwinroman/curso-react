@@ -53,45 +53,51 @@ export const FILTER_OPTIONS = [
     text: 'Blur',
     type: 'text',
     placeholder: '30',
-    regex: /^[0-9]*$/,
     inputClass: 'input-base type-text',
-    labelClass: 'input-label-base'
+    labelClass: 'input-label-base',
+    regex: /^[0-9]$|^[1-9][0-9]$|^100$|^\s*$/,
+    validationErrorMessage: 'El número debe entero entre 0 y 100'
   },
   {
     id: crypto.randomUUID(),
     text: 'Brightness',
     type: 'text',
     placeholder: '30',
-    regex: /^[0-9]*$/,
     inputClass: 'input-base type-text',
-    labelClass: 'input-label-base'
+    labelClass: 'input-label-base',
+    regex: /^[0-9]$|^[1-9][0-9]$|^100$|^\s*$/,
+    validationErrorMessage: 'El número debe ser entero entre 0 y 100'
   },
   {
     id: crypto.randomUUID(),
     text: 'Saturation',
     type: 'text',
     placeholder: '30',
-    regex: /^[0-9]*$/,
+    pattern: '^(((0|1).[0-9]{1,2})|1|2|2.0)$',
     inputClass: 'input-base type-text',
-    labelClass: 'filter-label-base'
+    labelClass: 'filter-label-base',
+    regex: /^(?:0|1).[0-9]{1,2}$|^[0-2]$|^2.0$|^\s*$/,
+    validationErrorMessage: 'El número debe ser decimal entre 0.0 y 2.0'
   },
   {
     id: crypto.randomUUID(),
     text: 'Hue',
     type: 'text',
-    placeholder: '30',
-    regex: /^[0-9]*$/,
+    placeholder: 'Hue rotation in degrees',
     inputClass: 'input-base type-text',
-    labelClass: 'input-label-base'
+    labelClass: 'input-label-base',
+    regex: /^[0-9]$|^[1-9][0-9]$|^[1-2][0-9][0-9]$|^3[0-5][0-9]$|^360$|^\s*$/,
+    validationErrorMessage: 'El número debe ser entero entre 0 y 360'
   },
   {
     id: crypto.randomUUID(),
     text: 'Lightness',
     type: 'text',
-    placeholder: '30',
-    regex: /^[0-9]*$/,
+    placeholder: 'Lightness addend',
     inputClass: 'input-base type-text',
-    labelClass: 'input-label-base'
+    labelClass: 'input-label-base',
+    regex: /^[0-9]$|^[1-9][0-9]$|^100$|^\s*$/,
+    validationErrorMessage: 'El número debe ser   entero entre 0 y 100'
   }
 ]
 

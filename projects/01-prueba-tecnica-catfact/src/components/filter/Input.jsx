@@ -55,3 +55,12 @@ export function InputColor ({ label, disabled }) {
     </div>
   )
 }
+
+export function InputCheckboxWithLabel ({ label }) {
+  return (
+    <div className="type-checkbox">
+      <input type="checkbox" className="input-type-checkbox" />
+      <label className="label-type-checkbox" htmlFor="cbox2">{label}</label>
+    </div>
+  )
+}

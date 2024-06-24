@@ -1,5 +1,6 @@
 import './Input.css'
 import { useState } from 'react'
+import { getRandomColor } from '../../utils/util'
 
 export function Input ({ id, type, placeholder, regex, text, inputClass, labelClass, validationErrorMessage }) {
   const [invalid, setInvalid] = useState(false)
@@ -33,8 +34,9 @@ export function Input ({ id, type, placeholder, regex, text, inputClass, labelCl
   )
 }
 
-export function InputColor ({ label, disabled }) {
-  const [color, setColor] = useState('#ff0000')
+export function InputColor ({ label, disabled = false, initialColor = getRandomColor() }) {
+  const [color, setColor] = useState(initialColor)
+  const id = crypto.randomUUID()
 
   const handleChange = (event) => {
     setColor(event.target.value)
@@ -45,12 +47,13 @@ export function InputColor ({ label, disabled }) {
       <label className={`input-label-base ${disabled ? 'disabled' : ''}`}>{ label }</label>
       <div className={`input-base type-color ${disabled ? 'disabled' : ''}`} >
         <input
+          id={id}
           onChange={handleChange}
           type="color"
           value={color}
           disabled={disabled}
         />
-        <span>{color}</span>
+        <label htmlFor={id}>{color.toUpperCase()}</label>
       </div>
     </div>
   )

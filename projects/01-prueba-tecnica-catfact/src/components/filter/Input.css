@@ -6,6 +6,14 @@
   background-color: rgb(28, 32, 37);
   color: rgb(199, 208, 221);
   transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+
+  /* Color del placeholder en diferentes navegadores */
+  &::placeholder,
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &::-ms-input-placeholder {
+    color: #ffffffb3;
+  }
 }
 
 .input-box-container {
@@ -63,10 +71,12 @@
 .input-base.type-color {
   position: relative;
   padding: 1.131rem 0.5rem;
+  color: #ffffffb3;
 
   &.disabled {
     background-color: #434d5b;
     color: #898b8f;
+    pointer-events: none;
   }
 
   &:hover:not(.disabled) {
@@ -88,10 +98,6 @@
   transform: translateY(-50%);
   border-radius: 10px;
   cursor: pointer;
-
-  &:disabled {
-    pointer-events: none;
-  }
 }
 
 .input-base.type-color > input::-webkit-color-swatch {
@@ -106,7 +112,7 @@
   padding: 0;
 }
 
-.input-base.type-color > span {
+.input-base.type-color > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -114,8 +120,8 @@
   height: 100%;
   display: grid;
   place-content: center;
-  pointer-events: none;
   padding-top: 3px;
+  cursor: pointer;
 }
 
 /* Input checkbox type */

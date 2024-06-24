@@ -1,6 +1,6 @@
 import './Filter.css'
 import { Select } from './Select'
-import { Input, InputColor } from './Input'
+import { Input, InputColor, InputCheckboxWithLabel } from './Input'
 import { Button } from '../Button'
 import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS } from '../../constants/filter-options'
 import { useDisabled } from '../../hooks/useDisabled'
@@ -24,7 +24,6 @@ export function Filter ({ updateFact }) {
               <div className="filter-group">
                 <Select label={tipo.label} options={tipo.options} />
                 <Select label={filter.label} options={filter.options} updateDisabled={updateDisabled}/>
-                <InputColor label="Custom filter" disabled={disabled}/>
               </div>
             </section>
 
@@ -46,6 +45,10 @@ export function Filter ({ updateFact }) {
                   />
                 ))
               }
+                <div className="filter-option-color">
+                  <InputColor label="Custom color filter" disabled={disabled}/>
+                  <InputCheckboxWithLabel label="Activar filtro por color"/>
+                </div>
               </div>
             </section>
 

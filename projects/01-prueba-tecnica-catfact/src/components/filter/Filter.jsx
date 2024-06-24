@@ -31,9 +31,10 @@ export function Filter ({ updateFact }) {
                 text={element.text}
                 type={element.type}
                 placeholder={element.placeholder}
-                regex={element.regex}
                 inputClass={element.inputClass}
                 labelClass={element.labelClass}
+                regex={element.regex}
+                validationErrorMessage={element.validationErrorMessage}
               />
             ))
           }

@@ -1,14 +1,21 @@
 import './Input.css'
 import { useState } from 'react'
 
-export function Input ({ id, type, placeholder, regex, text, inputClass, labelClass }) {
+export function Input ({ id, type, placeholder, regex, text, inputClass, labelClass, validationErrorMessage }) {
+  const [invalid, setInvalid] = useState(false)
+
   const handleChange = (event) => {
     const { value } = event.target
-    if (!value.match(regex)) {
-      event.target.setCustomValidity('Invalid input')
+
+    if (!value.trim().match(regex)) {
+      setInvalid(true)
+      event.target.setCustomValidity('Datos invalidos')
     } else {
+      setInvalid(false)
       event.target.setCustomValidity('')
     }
+
+    event.target.reportValidity()
   }
 
   return (
@@ -19,9 +26,9 @@ export function Input ({ id, type, placeholder, regex, text, inputClass, labelCl
         type={type}
         className={inputClass}
         placeholder={placeholder}
-        pattern={regex}
         onChange={handleChange}
       />
+      { invalid && <p className="error-message">{validationErrorMessage}</p> }
     </div>
   )
 }

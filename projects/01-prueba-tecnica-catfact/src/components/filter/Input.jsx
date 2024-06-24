@@ -56,11 +56,18 @@ export function InputColor ({ label, disabled }) {
   )
 }
 
-export function InputCheckboxWithLabel ({ label }) {
+export function InputCheckboxWithLabel ({ label, updateDisabledInputColor, checked = false }) {
+  const handleChange = (event) => {
+    if (!updateDisabledInputColor) return
+
+    if (event.target.checked) updateDisabledInputColor(false)
+    else updateDisabledInputColor(true)
+  }
+
   return (
     <div className="type-checkbox">
-      <input type="checkbox" className="input-type-checkbox" />
-      <label className="label-type-checkbox" htmlFor="cbox2">{label}</label>
+      <input id="cbox" type="checkbox" className="input-type-checkbox" defaultChecked={checked} onChange={handleChange}/>
+      <label className="label-type-checkbox" htmlFor="cbox">{label}</label>
     </div>
   )
 }

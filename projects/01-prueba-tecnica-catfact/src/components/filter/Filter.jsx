@@ -3,11 +3,13 @@ import { Select } from './Select'
 import { Input, InputColor, InputCheckboxWithLabel } from './Input'
 import { Button } from '../Button'
 import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS } from '../../constants/filter-options'
-import { useDisabled } from '../../hooks/useDisabled'
+import { useDisabledInputColor } from '../../hooks/useDisabledInputColor'
 
 export function Filter ({ updateFact }) {
+  const INPUT_CHECKED = false // Para el input checkbox, y el input color deshabilitado
+
   const { filter, tipo } = SELECT_FILTER_OPTIONS
-  const { disabled, updateDisabled } = useDisabled()
+  const { disabledInputColor, updateDisabledInputColor } = useDisabledInputColor(INPUT_CHECKED)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -23,7 +25,7 @@ export function Filter ({ updateFact }) {
               <h4 className="filter-title">Filter principal</h4>
               <div className="filter-group">
                 <Select label={tipo.label} options={tipo.options} />
-                <Select label={filter.label} options={filter.options} updateDisabled={updateDisabled}/>
+                <Select label={filter.label} options={filter.options} />
               </div>
             </section>
 
@@ -46,8 +48,8 @@ export function Filter ({ updateFact }) {
                 ))
               }
                 <div className="filter-option-color">
-                  <InputColor label="Custom color filter" disabled={disabled}/>
-                  <InputCheckboxWithLabel label="Activar filtro por color"/>
+                  <InputColor label="Custom color filter" disabled={disabledInputColor}/>
+                  <InputCheckboxWithLabel label="Activar filtro por color" updateDisabledInputColor={updateDisabledInputColor} checked={!disabledInputColor} />
                 </div>
               </div>
             </section>

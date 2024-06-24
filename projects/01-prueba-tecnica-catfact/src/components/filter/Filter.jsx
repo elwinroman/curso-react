@@ -57,8 +57,7 @@ export function Filter ({ updateFact }) {
             <section className="filter-wrapp">
               <h4 className="filter-title">Filter text</h4>
               <div className="filter-group">
-                <InputColor label="FontColor" disabled={false}/>
-                <InputColor label="FontColor" disabled={false}/>
+                <InputColor label="FontColor" initialColor="#222222" />
               </div>
             </section>
           </div>

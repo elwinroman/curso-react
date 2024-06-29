@@ -2,7 +2,7 @@ import './Filter.css'
 import { Select } from './Select'
 import { Input, InputColor, InputCheckboxWithLabel } from './Input'
 import { Button } from '../Button'
-import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS } from '../../constants/filter-options'
+import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS, FONT_OPTIONS } from '../../constants/filter-options'
 import { useDisabledInputColor } from '../../hooks/useDisabledInputColor'
 
 export function Filter ({ updateFact }) {
@@ -57,6 +57,15 @@ export function Filter ({ updateFact }) {
             <section className="filter-wrapp">
               <h4 className="filter-title">Filter text</h4>
               <div className="filter-group">
+                {
+                  FONT_OPTIONS.map(element => (
+                    <Select
+                      key={`prop-${element.id}`}
+                      label={element.label}
+                      options={element.options}
+                    />
+                  ))
+                }
                 <InputColor label="FontColor" initialColor="#222222" />
               </div>
             </section>

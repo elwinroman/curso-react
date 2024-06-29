@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function useDisabledInputColor ({ _disabled = true }) {
+export function useInputColor ({ _disabled }) {
   const [disabledInputColor, setDisabledInputColor] = useState(_disabled)
 
   const updateDisabledInputColor = (_disabled) => {

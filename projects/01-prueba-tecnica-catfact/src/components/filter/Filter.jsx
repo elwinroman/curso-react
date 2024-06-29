@@ -3,13 +3,28 @@ import { Select } from './Select'
 import { Input, InputColor, InputCheckboxWithLabel } from './Input'
 import { Button } from '../Button'
 import { SELECT_FILTER_OPTIONS, FILTER_OPTIONS, FONT_OPTIONS } from '../../constants/filter-options'
-import { useDisabledInputColor } from '../../hooks/useDisabledInputColor'
+import { useInputColor } from '../../hooks/useInputColor'
 
 export function Filter ({ updateFact }) {
-  const INPUT_CHECKED = false // Para el input checkbox, y el input color deshabilitado
+  const DISABLED_INPUT_COLOR = {
+    customColor: true,
+    fontColor: true,
+    fontBackground: true
+  } // true: disabled, false: enabled
 
   const { filter, tipo } = SELECT_FILTER_OPTIONS
-  const { disabledInputColor, updateDisabledInputColor } = useDisabledInputColor(INPUT_CHECKED)
+  const {
+    disabledInputColor: disabledInputColor1,
+    updateDisabledInputColor: updateDisabledInputColor1
+  } = useInputColor({ _disabled: DISABLED_INPUT_COLOR.customColor })
+  const {
+    disabledInputColor: disabledInputColor2,
+    updateDisabledInputColor: updateDisabledInputColor2
+  } = useInputColor({ _disabled: DISABLED_INPUT_COLOR.fontColor })
+  const {
+    disabledInputColor: disabledInputColor3,
+    updateDisabledInputColor: updateDisabledInputColor3
+  } = useInputColor({ _disabled: DISABLED_INPUT_COLOR.fontBackground })
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -48,8 +63,11 @@ export function Filter ({ updateFact }) {
                 ))
               }
                 <div className="filter-option-color">
-                  <InputColor label="Custom color filter" disabled={disabledInputColor}/>
-                  <InputCheckboxWithLabel label="Activar filtro por color" updateDisabledInputColor={updateDisabledInputColor} checked={!disabledInputColor} />
+                  <InputColor label="Custom color filter" disabled={disabledInputColor1}/>
+                  <InputCheckboxWithLabel
+                    label={`${disabledInputColor1 ? 'Habilitar' : 'Deshabilitar'} filtro por color`}
+                    updateDisabledInputColor={updateDisabledInputColor1}
+                    checked={!disabledInputColor1} />
                 </div>
               </div>
             </section>
@@ -66,7 +84,30 @@ export function Filter ({ updateFact }) {
                     />
                   ))
                 }
-                <InputColor label="FontColor" initialColor="#222222" />
+                <div className="filter-option-color">
+                  <InputColor
+                    label="Font color"
+                    disabled={disabledInputColor2}
+                  />
+                  <InputCheckboxWithLabel
+                    label={`${disabledInputColor2 ? 'Habilitar' : 'Deshabilitar'} font color`}
+                    updateDisabledInputColor={updateDisabledInputColor2}
+                    checked={!disabledInputColor2}
+                  />
+                </div>
+
+                <div className="filter-option-color">
+                  <InputColor
+                    label="Font background"
+                    disabled={disabledInputColor3}
+                  />
+                  <InputCheckboxWithLabel
+                    label={`${disabledInputColor3 ? 'Habilitar' : 'Deshabilitar'} font background`}
+                    updateDisabledInputColor={updateDisabledInputColor3}
+                    checked={!disabledInputColor3}
+                  />
+                </div>
+
               </div>
             </section>
           </div>

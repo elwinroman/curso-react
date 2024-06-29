@@ -5,9 +5,17 @@ export function Select ({ label, options }) {
     <div className="input-box-container">
       <label className="input-label-base">{label}</label>
       <select className="input-base type-select">
-        {options.map(element => (
-          <option key={element.value} value={element.value}>{element.name}</option>
-        ))}
+        {
+          options.map(element => (
+            <option
+              key={element.value}
+              value={element.value}
+              selected={element.default
+                ? 'selected'
+                : ''}>{element.name}
+            </option>
+          ))
+        }
       </select>
     </div>
   )

@@ -13,7 +13,7 @@ export default function App () {
   return (
     <div className='container'>
 
-      <h1>App de gatitos (Cat facts)</h1>
+      <h1>😽 Cat facts</h1>
       <Filter updateFact={updateFact} />
       {fact && <h3>{fact}</h3> }
       {
